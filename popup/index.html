@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Corsify 1.0.0</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+  <link href="../../fonts/SourceSansPro-Regular.ttf" rel="stylesheet">
+</head>
+
+<body>
+  <div class="root__container">
+    <h4 class="heading">Settings</h4>
+    <div class="enable__cors__checkbox__wrapper">
+      <div class="enable__cors__checkbox__container">
+        <span>Enable CORS</span>
+        <label class="switch">
+          <input type="checkbox" id="enable-cors">
+          <span class="round__slider"></span>
+        </label>
+      </div>
+      <div class="help__message">
+        Turn this on to start using this webextension
+      </div>
+    </div>
+    <div class="enforce__cors__checkbox__wrapper">
+      <div class="enforce__cors__checkbox__container">
+        <span>Enforce CORS for all URLs</span>
+        <label class="switch">
+          <input type="checkbox" id="enforce-cors">
+          <span class="round__slider"></span>
+        </label>
+      </div>
+      <div class="help__message">Turn this on if you want to enforce
+        <span class="highlight">access-control-allow-origin</span> as
+        <span class="highlight">&#x2732; </span> for all URLs irrespective of whitelist below
+      </div>
+    </div>
+    <div class="whitelist__form__wrapper">
+      <form class="whitelist__form" id="whitelist-form">
+        <div class="url__input__wrapper">
+          <input class="enter__url" id="enter-url" placeholder="URL or URL pattern to intercept" type="text" name="url" value="" autocomplete="off">
+          <a href="https://developer.chrome.com/extensions/match_patterns" target="_blank" title="Match Patterns documentation">
+            <svg height="24" width="24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+          </a>
+        </div>
+        <button class="add__whitelisted__url" type="submit" title="Add URL" aria-label="Add URL">
+          <span>&plus;</span>
+        </button>
+      </form>
+      <div class="help__message">
+        Use add button at the right if you've got a lot of time and don't like to press enter
+      </div>
+    </div>
+    <div class="whitelisted__urls__wrapper">
+      <ul id="whitelisted-urls-list" class="whitelisted__urls__list">
+        <!-- List items inserted using JavaScript -->
+      </ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

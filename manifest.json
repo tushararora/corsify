@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Corsify",
+  "version": "1.0.0",
+  "description": "Enable CORS by transforming http response",
+  "homepage_url": "https://github.com/tushararora/corsify",
+  "permissions": ["storage", "webRequest", "webRequestBlocking", "<all_urls>"],
+  "icons": {
+    "32": "images/corsify-32.png",
+    "48": "images/corsify-48.png",
+    "96": "images/corsify-96.png"
+  },
+  "browser_action": {
+    "default_icon": "images/corsify-32.png",
+    "default_title": "Corsify",
+    "default_popup": "popup/index.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
